@@ -128,7 +128,7 @@ func report(w io.Writer, sizes string, cold, highCard int) error {
 			if err := spawn(s, n, dir, &r); err != nil {
 				return err
 			}
-			build := "—"
+			build := "-"
 			if r.Build > 0 {
 				build = dur(r.Build)
 			}
@@ -181,7 +181,7 @@ func report(w io.Writer, sizes string, cold, highCard int) error {
 			if err := spawn("highcard:"+s, highCard, dir, &r); err != nil {
 				return err
 			}
-			build := "—"
+			build := "-"
 			if r.Build > 0 {
 				build = dur(r.Build)
 			}
