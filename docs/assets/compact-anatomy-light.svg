@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 356" width="960" height="356" role="img" aria-label="Slim Compact 0x03 byte layout and TieredMap read path">
+  <rect width="960" height="356" rx="12" fill="#ffffff" stroke="#d0d7de" stroke-width="1"/>
+  <rect x="18" y="16" width="924" height="158" rx="10" fill="#f6f8fa" stroke="#d0d7de"/>
+  <text x="36" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#1f2328">Slim Compact&lt;T&gt; (0x03) — Single-Copy Flat Bytes</text>
+  <text x="924" y="42" text-anchor="end" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="11" font-weight="600" fill="#1a7f37">sizeof(Compact&lt;T&gt;) == 16 B</text>
+  <rect x="36" y="58" width="122" height="50" rx="6" fill="#fbefff" stroke="#8250df"/>
+  <text x="97" y="78" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" font-weight="700" fill="#8250df">CompactPod</text>
+  <text x="97" y="95" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="9.5" fill="#59636e">cnfRaw string (16B)</text>
+  <line x1="158" y1="83" x2="178" y2="83" stroke="#59636e" stroke-width="1.5"/>
+  <rect x="178" y="58" width="64" height="50" fill="#ffffff" stroke="#d0d7de"/>
+  <text x="210" y="78" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" font-weight="600" fill="#1f2328">flags</text>
+  <text x="210" y="95" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="9.5" fill="#59636e">[0] 1B</text>
+  <rect x="242" y="58" width="192" height="50" fill="#dafbe1" stroke="#1a7f37"/>
+  <text x="338" y="78" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" font-weight="700" fill="#1a7f37">flatRoot (stored once)</text>
+  <text x="338" y="95" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="9.5" fill="#59636e">[1..1+R] inlined structs</text>
+  <rect x="434" y="58" width="174" height="50" fill="#ddf4ff" stroke="#0969da"/>
+  <text x="521" y="78" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.0" font-weight="600" fill="#0969da">strBase · token · hash</text>
+  <text x="521" y="95" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="9.5" fill="#59636e">4B + opt 8B + 8B</text>
+  <rect x="608" y="58" width="116" height="50" fill="#ffffff" stroke="#d0d7de"/>
+  <text x="666" y="78" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.2" font-weight="600" fill="#1f2328">mask+counts</text>
+  <text x="666" y="95" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="9.5" fill="#59636e">non-empty only</text>
+  <rect x="724" y="58" width="134" height="50" fill="#e6f7f8" stroke="#0e7c86"/>
+  <text x="791" y="78" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.2" font-weight="600" fill="#096972">8→4→2→1B pools</text>
+  <text x="791" y="95" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="9.5" fill="#59636e">slices + strings</text>
+  <rect x="858" y="58" width="66" height="50" fill="#ffffff" stroke="#d0d7de"/>
+  <text x="891" y="78" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.2" font-weight="600" fill="#1f2328">CRC32C</text>
+  <text x="891" y="95" text-anchor="middle" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="9.5" fill="#59636e">4B tail</text>
+  <text x="36" y="134" font-size="11.2" fill="#59636e"><tspan font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.8" font-weight="600" fill="#1a7f37">Constant-offset getters: </tspan><tspan font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif">scalar &amp; string root reads take ≤1 bounds check (≤2 for time/addr), 0 allocs.</tspan></text>
+  <text x="36" y="155" font-size="11.2" fill="#59636e"><tspan font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.8" font-weight="600" fill="#0969da">Shared cnfrt.Dict: </tspan><tspan font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif">8B dictToken (slot + 48-bit nonce) resolves repeated strings; seen-twice filter skips UIDs.</tspan></text>
+  <rect x="18" y="188" width="924" height="152" rx="10" fill="#f6f8fa" stroke="#d0d7de"/>
+  <text x="36" y="214" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif" font-size="14" font-weight="700" fill="#1f2328">TieredMap[K, V] — Lock-Free Clean Reads &amp; Compaction</text>
+  <text x="924" y="214" text-anchor="end" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="11" font-weight="600" fill="#1a7f37">0.85 ns/op hot Get (18 CPUs) · 0.15 ms GC</text>
+  <rect x="36" y="232" width="196" height="56" rx="7" fill="#dafbe1" stroke="#1a7f37"/>
+  <text x="48" y="253" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.8" font-weight="700" fill="#1a7f37">epoch.Load() (atomic)</text>
+  <text x="48" y="273" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif" font-size="10.5" fill="#59636e">if clean: 0 locks, 0 allocs →</text>
+  <line x1="232" y1="260" x2="256" y2="260" stroke="#1a7f37" stroke-width="1.6"/>
+  <rect x="256" y="232" width="216" height="56" rx="7" fill="#e6f7f8" stroke="#0e7c86"/>
+  <text x="268" y="253" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.8" font-weight="700" fill="#096972">base: FrozenMap[K, V]</text>
+  <text x="268" y="273" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif" font-size="10.5" fill="#59636e">PtrBytes == 0 · wyhash groups</text>
+  <rect x="496" y="232" width="208" height="56" rx="7" fill="#ddf4ff" stroke="#0969da"/>
+  <text x="508" y="253" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.8" font-weight="700" fill="#0969da">active: 64 deltaShards</text>
+  <text x="508" y="273" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif" font-size="10.5" fill="#59636e">128B padded · Put / Tombstone</text>
+  <line x1="704" y1="260" x2="728" y2="260" stroke="#8250df" stroke-width="1.6"/>
+  <rect x="728" y="232" width="196" height="56" rx="7" fill="#fbefff" stroke="#8250df"/>
+  <text x="740" y="253" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.8" font-weight="700" fill="#8250df">flushing → compactor</text>
+  <text x="740" y="273" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif" font-size="10.5" fill="#59636e">epoch merge → new base</text>
+  <text x="36" y="316" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif" font-size="11.2" fill="#59636e">Clean epochs query FrozenMap directly without mutex traffic; writers mutate 64 padded shards while background compaction swaps base.</text>
+</svg>

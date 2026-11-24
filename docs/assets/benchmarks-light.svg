@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 536" width="960" height="536" role="img" aria-label="cnfgo benchmark comparison charts">
+  <rect width="960" height="536" rx="12" fill="#ffffff" stroke="#d0d7de" stroke-width="1"/>
+  <text x="20" y="31" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif" font-size="15" font-weight="700" fill="#1f2328">Measured Performance — go1.27.3 darwin/arm64 (Apple M5 Max, 18 CPUs, CGO_ENABLED=0)</text>
+  <text x="940" y="31" text-anchor="end" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="11" fill="#59636e">lower is better</text>
+  <rect x="18" y="46" width="452" height="232" rx="10" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1"/>
+  <text x="36" y="72" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#1f2328">Live Heap — 1,000,000 Catalog Items</text>
+  <text x="36" y="89" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#59636e">Pointer-rich struct graph (including Go stdlib unique.Make)</text>
+  <text x="36" y="122" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" fill="#1f2328">native map[*Item]</text>
+  <rect x="184" y="110" width="158" height="16" rx="4" fill="#eaeef2"/>
+  <rect x="184" y="110" width="154.5" height="16" rx="4" fill="#cf222e"/>
+  <text x="350" y="122" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.2" font-weight="600" fill="#1f2328">616 MiB (1.0x)</text>
+  <text x="36" y="157" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" fill="#1f2328">native+unique.Make</text>
+  <rect x="184" y="145" width="158" height="16" rx="4" fill="#eaeef2"/>
+  <rect x="184" y="145" width="139.5" height="16" rx="4" fill="#bf8700"/>
+  <text x="350" y="157" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.2" font-weight="600" fill="#1f2328">556 MiB (-10%)</text>
+  <text x="36" y="192" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" fill="#1f2328">map[CompactItem]</text>
+  <rect x="184" y="180" width="158" height="16" rx="4" fill="#eaeef2"/>
+  <rect x="184" y="180" width="89.9" height="16" rx="4" fill="#0969da"/>
+  <text x="350" y="192" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.2" font-weight="600" fill="#1f2328">359 MiB (-42%)</text>
+  <text x="36" y="227" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" fill="#1f2328">Compact + Dict</text>
+  <rect x="184" y="215" width="158" height="16" rx="4" fill="#eaeef2"/>
+  <rect x="184" y="215" width="67.6" height="16" rx="4" fill="#0f766e"/>
+  <text x="350" y="227" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.2" font-weight="600" fill="#1a7f37">269 MiB (2.3x)</text>
+  <text x="36" y="262" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" fill="#1f2328">Snapshot (RAM)</text>
+  <rect x="184" y="250" width="158" height="16" rx="4" fill="#eaeef2"/>
+  <rect x="184" y="250" width="43.8" height="16" rx="4" fill="#1a7f37"/>
+  <text x="350" y="262" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.2" font-weight="600" fill="#1a7f37">175 MiB (3.5x)</text>
+  <rect x="490" y="46" width="452" height="232" rx="10" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1"/>
+  <text x="508" y="72" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#1f2328">Full GC Pause — 1,000,000 Items</text>
+  <text x="508" y="89" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#59636e">Median runtime.GC() duration (GOGC=100)</text>
+  <text x="508" y="122" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" fill="#1f2328">native map[*Item]</text>
+  <rect x="656" y="110" width="158" height="16" rx="4" fill="#eaeef2"/>
+  <rect x="656" y="110" width="149.3" height="16" rx="4" fill="#cf222e"/>
+  <text x="822" y="122" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.2" font-weight="600" fill="#1f2328">31.2 ms</text>
+  <text x="508" y="157" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" fill="#1f2328">native+unique.Make</text>
+  <rect x="656" y="145" width="158" height="16" rx="4" fill="#eaeef2"/>
+  <rect x="656" y="145" width="133.9" height="16" rx="4" fill="#bf8700"/>
+  <text x="822" y="157" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.2" font-weight="600" fill="#1f2328">28.0 ms (471M)</text>
+  <text x="508" y="192" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" fill="#1f2328">Compact + Dict</text>
+  <rect x="656" y="180" width="158" height="16" rx="4" fill="#eaeef2"/>
+  <rect x="656" y="180" width="35.9" height="16" rx="4" fill="#0969da"/>
+  <text x="822" y="192" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.2" font-weight="600" fill="#1f2328">7.50 ms (4.2x)</text>
+  <text x="508" y="227" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" fill="#1f2328">SlabMap + Dict</text>
+  <rect x="656" y="215" width="158" height="16" rx="4" fill="#eaeef2"/>
+  <rect x="656" y="215" width="4.0" height="16" rx="4" fill="#0f766e"/>
+  <text x="822" y="227" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.2" font-weight="600" fill="#1a7f37">0.42 ms (74x)</text>
+  <text x="508" y="262" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" fill="#1f2328">Snapshot (RAM)</text>
+  <rect x="656" y="250" width="158" height="16" rx="4" fill="#eaeef2"/>
+  <rect x="656" y="250" width="4.0" height="16" rx="4" fill="#1a7f37"/>
+  <text x="822" y="262" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.2" font-weight="600" fill="#1a7f37">0.18 ms (171x)</text>
+  <rect x="18" y="290" width="452" height="232" rx="10" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1"/>
+  <text x="36" y="316" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#1f2328">Cold Start — 1,000,000 Items (log scale)</text>
+  <text x="36" y="333" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#59636e">Open from warm page cache + read first item</text>
+  <text x="36" y="366" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" fill="#1f2328">encoding/json</text>
+  <rect x="184" y="354" width="158" height="16" rx="4" fill="#eaeef2"/>
+  <rect x="184" y="354" width="155.6" height="16" rx="4" fill="#cf222e"/>
+  <text x="350" y="366" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.2" font-weight="600" fill="#1f2328">1.56 s</text>
+  <text x="36" y="401" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" fill="#1f2328">encoding/gob</text>
+  <rect x="184" y="389" width="158" height="16" rx="4" fill="#eaeef2"/>
+  <rect x="184" y="389" width="142.4" height="16" rx="4" fill="#bf8700"/>
+  <text x="350" y="401" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.2" font-weight="600" fill="#1f2328">711 ms (2.2x)</text>
+  <text x="36" y="436" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" fill="#1f2328">.cnf Untrusted</text>
+  <rect x="184" y="424" width="158" height="16" rx="4" fill="#eaeef2"/>
+  <rect x="184" y="424" width="103.7" height="16" rx="4" fill="#0969da"/>
+  <text x="350" y="436" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.2" font-weight="600" fill="#1f2328">71.2 ms (22x)</text>
+  <text x="36" y="471" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" fill="#1f2328">.cnf Checksum</text>
+  <rect x="184" y="459" width="158" height="16" rx="4" fill="#eaeef2"/>
+  <rect x="184" y="459" width="83.2" height="16" rx="4" fill="#0f766e"/>
+  <text x="350" y="471" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.2" font-weight="600" fill="#1a7f37">21.1 ms (74x)</text>
+  <text x="36" y="506" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" fill="#1f2328">.cnf TrustedHdr</text>
+  <rect x="184" y="494" width="158" height="16" rx="4" fill="#eaeef2"/>
+  <rect x="184" y="494" width="11.4" height="16" rx="4" fill="#1a7f37"/>
+  <text x="350" y="506" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.2" font-weight="600" fill="#1a7f37">295 µs (5280x)</text>
+  <rect x="490" y="290" width="452" height="232" rx="10" fill="#f6f8fa" stroke="#d0d7de" stroke-width="1"/>
+  <text x="508" y="316" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif" font-size="13.5" font-weight="700" fill="#1f2328">100,000 Kubernetes Pods (examples/k8scache)</text>
+  <text x="508" y="333" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Inter, Roboto, Helvetica, Arial, sans-serif" font-size="11" fill="#59636e">2 containers/pod, resource.Quantity, labels, netip, time</text>
+  <text x="508" y="366" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" fill="#1f2328">map[string]*Pod</text>
+  <rect x="656" y="354" width="158" height="16" rx="4" fill="#eaeef2"/>
+  <rect x="656" y="354" width="151.3" height="16" rx="4" fill="#cf222e"/>
+  <text x="822" y="366" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.2" font-weight="600" fill="#1f2328">158 MiB (7.3ms)</text>
+  <text x="508" y="401" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" fill="#1f2328">SlabMap[Compact]</text>
+  <rect x="656" y="389" width="158" height="16" rx="4" fill="#eaeef2"/>
+  <rect x="656" y="389" width="93.9" height="16" rx="4" fill="#0969da"/>
+  <text x="822" y="401" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.2" font-weight="600" fill="#1f2328">98 MiB (0.22ms)</text>
+  <text x="508" y="436" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" fill="#1f2328">map[CompactPod]</text>
+  <rect x="656" y="424" width="158" height="16" rx="4" fill="#eaeef2"/>
+  <rect x="656" y="424" width="88.8" height="16" rx="4" fill="#0969da"/>
+  <text x="822" y="436" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.2" font-weight="600" fill="#1f2328">93 MiB (4.2ms)</text>
+  <text x="508" y="471" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" fill="#1f2328">SlabMap + Dict</text>
+  <rect x="656" y="459" width="158" height="16" rx="4" fill="#eaeef2"/>
+  <rect x="656" y="459" width="64.4" height="16" rx="4" fill="#1a7f37"/>
+  <text x="822" y="471" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.2" font-weight="600" fill="#1a7f37">67 MiB (0.21ms)</text>
+  <text x="508" y="506" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.5" fill="#1f2328">Compact + Dict</text>
+  <rect x="656" y="494" width="158" height="16" rx="4" fill="#eaeef2"/>
+  <rect x="656" y="494" width="60.7" height="16" rx="4" fill="#0f766e"/>
+  <text x="822" y="506" font-family="ui-monospace, SFMono-Regular, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="10.2" font-weight="600" fill="#1a7f37">63 MiB (2.5x)</text>
+</svg>
